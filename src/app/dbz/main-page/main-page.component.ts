@@ -34,4 +34,9 @@ export class MainPageComponent {
     nombre: '',
     poder: 0,
   };
+
+  agregarNuevoPersonaje = (newPersonaje: NewCharacter) => {
+    console.log('Se disparó', newPersonaje);
+    this.personajes.push(newPersonaje);
+  };
 }
