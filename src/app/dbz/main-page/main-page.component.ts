@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { NewCharacter } from '../interfaces/dbz.interface';
+import { DbzService } from '../services/dbz.service';
 
 @Component({
   selector: 'app-main-page',
@@ -14,29 +15,15 @@ export class MainPageComponent {
   //   console.log('Heeey!!');
   // };
 
-  //2 forma de hacer formularios
-  personajes: NewCharacter[] = [
-    {
-      nombre: 'Goku',
-      poder: 50000,
-    },
-    {
-      nombre: 'Vegeta',
-      poder: 40000,
-    },
-    {
-      nombre: 'Trunks',
-      poder: 30000,
-    },
-  ];
 
   nuevo: NewCharacter = {
     nombre: '',
     poder: 0,
   };
 
-  agregarNuevoPersonaje = (newPersonaje: NewCharacter) => {
-    console.log('Se disparó', newPersonaje);
-    this.personajes.push(newPersonaje);
-  };
+
+  //constructor de la clase MainPageComponent donde se define la propiedad de
+  //DBZ services
+  //asi es como se injecta un servicio en el componente
+  constructor() {}
 }
